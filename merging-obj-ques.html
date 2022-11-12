@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const users = [
+    {
+      id: 1,
+      name: "Ankit Jain",
+    },
+    {
+      id: 2,
+      name: "Shankar Sahu",
+    },
+    {
+      id: 3,
+      name: "Akash Kushwaha",
+    },
+  ];
+
+  const orders = [
+    {
+      orderId: 101,
+      userId: 1,
+      productId: 123,
+      productName: "Apple iPhone 14 Pro Max",
+    },
+    {
+      orderId: 102,
+      userId: 1,
+      productId: 124,
+      productName: "Apple MacBook Pro",
+    },
+    {
+      orderId: 103,
+      userId: 1,
+      productId: 125,
+      productName: "Apple iWatch 7 series",
+    },
+    {
+      orderId: 104,
+      userId: 2,
+      productId: 126,
+      productName: "Samsung S22",
+    },
+  ];
+
+  // const final = [
+  //   {
+  //     userId: 1,
+  //     userName: "Ankit Jain",
+  //     orders: [
+  //       {
+  //         orderId: 101,
+  //         productId: 123,
+  //         productName: "Apple iPhone 14 Pro Max",
+  //       },
+  //       {
+  //         orderId: 102,
+  //         productId: 124,
+  //         productName: "Apple MacBook Pro",
+  //       },
+  //       {
+  //         orderId: 103,
+  //         productId: 125,
+  //         productName: "Apple iWatch 7 series",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     userId: 2,
+  //     userName: "Shankar Sahu",
+  //     orders: [
+  //       {
+  //         orderId: 104,
+  //         userId: 2,
+  //         productId: 126,
+  //         productName: "Samsung S22",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     userId: 3,
+  //     userName: "Akash Kushwaha",
+  //     orders: [],
+  //   },
+  // ];
+
+  // step1: create a blank arry
+  // step 2:iterate a loop for users and create a object to store the key
+
+  //  step3:iterate another for loop for orders
+  // step:4 compare the users id to order
+  // step; 5 create a obj to store the value of key
+  //step: 6 push the value of order in result obj
+  //step : 7 push the value in blank array
+
+  const final = []; // create a blank arry
+
+  for (i = 0; i < users.length; i++) {
+    //iterate a loop for users and create a object to store the key
+    const result = {
+      // create a obj to store key
+      userId: users[i].id,
+      userName: users[i].name,
+      orders: [],
+    };
+    for (let j = 0; j < orders.length; j++) {
+      // iterate another for loop for orders
+      if (users[i].id === orders[j].userId) {
+        // compare the users id to orders id
+        const order = {
+          // create a obj to store the value of key
+          orderId: orders[j].orderId,
+          productId: orders[j].productId,
+          productName: orders[j].productName,
+        };
+        result.orders.push(order); // push the value of order in result obj
+      }
+    }
+    final.push(result); // push the value in blank array
+  }
+
+  console.log(final);
+</script>
