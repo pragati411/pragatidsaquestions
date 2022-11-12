@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // create a blank array
+  // set count = 1
+  // run a foor loop
+  // simply write a condition if current str is equal to str of i then simply i++  to count the occurence
+  // else initialise with 1
+
+  let str = "AAAABBBCCDAABB";
+  let count = 1;
+  let resultStr = "";
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[i + 1]) {
+      count++;
+    } else {
+      resultStr = resultStr + str[i] + count;
+      count = 1;
+    }
+  }
+  document.write(resultStr);
+</script>
