@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+const findVowels = (str) => {
+const vovels = {a:true, e:true, i:true, o:true, u:true};
+
+for (let i = 0; i < str.length; i++){
+    const currentChr = str[i];
+
+if (vovels.hasOwnProperty(currentChr)){
+vovels[currentChr]++;
+
+}
+}
+return vovels;
+
+}
+console.log(findVowels("abaaeeiiuuooccdduueie"))
+
+</script>
