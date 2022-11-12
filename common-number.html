@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+
+
+function getCommon(arr1, arr2) {
+  let  commonNum = [];                   
+
+  for(let i=0 ; i<arr1.length ; ++i) {
+    for(let j=0 ; j<arr2.length ; ++j) {
+
+      if(arr1[i] == arr2[j]) {       
+        commonNum.push(arr1[i]);        
+      }
+    }
+  }
+  
+  return commonNum;                     
+}
+
+let arr1 = [1, 4, 9, 6, 17, 8, 23];
+let arr2 = [1, 9, 8, 7, 6, 1, 2, 5];
+
+
+let commonElements = getCommon(arr1, arr2); 
+document.write("common elements of the array")
+document.write(commonElements);
+
+
+
+
+</script>
