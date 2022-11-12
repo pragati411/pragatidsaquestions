@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // let num1 = "200";
+  // let num2 = "10";
+
+  // var addStrings = function (num1, num2) {
+  //   var len1 = num1.length;
+  //   var len2 = num2.length;
+  //   var max = Math.max(len1, len2);
+  //   var res = Array(max);
+  //   var carry = 0;
+  //   var val = 0;
+
+  //   for (var i = 0; i < max; i++) {
+  //     val =
+  //       Number(num1[len1 - 1 - i] || 0) +
+  //       Number(num2[len2 - 1 - i] || 0) +
+  //       carry;
+  //     carry = Math.floor(val / 10);
+  //     res[max - 1 - i] = val % 10;
+  //   }
+
+  //   return (carry || "") + res.join("");
+  // };
+  // console.log(addStrings(num1, num2));
+
+  let num1 = "20";
+  let num2 = "300";
+
+  let i = num1.split("").length - 1; // sum of array strt with 0 thats why -1
+  let j = num2.split("").length - 1;
+  carry = 0;
+  result = [];
+  while (i >= 0 || j >= 0 || carry) {
+    let n1 = num1[i] || 0;
+    let n2 = num2[j] || 0;
+
+    let sum = n1 * 1 + n2 * 1 + carry; // converting string into number
+    let reminder = sum % 10; // module of 10
+    result.push(reminder);
+    carry = sum >= 10 ? 1 : 0; // if sum is greater than 10 then 1 or 0
+    i--;
+    j--;
+  }
+  console.log(result.reverse().join(""));
+</script>
