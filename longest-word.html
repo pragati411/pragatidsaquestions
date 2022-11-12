@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+  // by using for loop 
+  // step 1 : create a function
+  // step 2 : split the string into array by using space 
+ //step 3 : run a for loop 
+ // step 4 : write a condition if split string is greater than the longest then retrun the longest 
+ // step 5 : return the value
+
+
+ function findLongestWord(str) {
+  // Step 1. Split the string into an array of strings
+  var strSplit = str.split(' ');
+  
+	
+  // Step 2. Initiate a variable that will hold the length of the longest word
+  var longestWord = 0;
+
+  // Step 3. Create the FOR loop
+  for(var i = 0; i < strSplit.length; i++){
+    if(strSplit[i].length > longestWord){ // If strSplit[i].length is greater than the word it is compared with...
+	longestWord = strSplit[i].length; // ...then longestWord takes this new value
+     }
+  }
+  
+
+  //Step 4. Return the longest word
+  return longestWord; 
+}
+console.log(longestWord("my name is pragati and im from madhyapradesh"))
+
+
+
+
+
+
+// by reduce method //
+// step 1 
+
+function findLongestWord1(str) {
+  var longestWord = str.split(' ').reduce(function(longest, currentWord) {
+    return currentWord.length > longest.length ? currentWord : longest;
+  }, "");
+  return longestWord;
+}
+
+
+console.log(findLongestWord1("my name is pragti shuklaa"));
+
+// by sort method //
+// step 1: split the string into array //
+// step 2 : sort the elements in the arraynon
+ // step 3: return the longest word
+
+ function findLongestWord(str) {
+  // Step 1. Split the string into an array of strings
+  var strSplit = str.split(' ');
+
+  
+  // Step 2. Sort the elements in the array
+  var longestWord = strSplit.sort(function(firstvalue, secondvalue) { 
+    return secondvalue.length - firstvalue.length;
+  });
+  
+  
+  // Step 3. Return the length of the first element of the array
+  return longestWord[0];
+}
+console.log(findLongestWord("my name is pragati shuklaaa"))
+                                
+
+// by using for each loop 3rd method to solve this question
+// step 1 : create a function 
+// step 2 : split the string by using space 
+// step 3 : run a foreach loop to check the largest number from the array
+// step 4 : return word// 
+
+function longestWord(string) {
+    var str = string.split(" ");
+    var longest = 0;
+    
+    str.forEach(function(str) {
+        if (longest < str.length) {
+            longest = str.length;
+            word = str;
+        }
+    });
+    return word;
+}
+console.log(longestWord("my name is pragati shukla"));
+
+
+</script>
