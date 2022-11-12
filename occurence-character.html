@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+
+// Step 1 - create an object
+
+// step 2 - traverse through a string
+
+// Step 3 - add character as key and character count as value in the object
+
+var obj={}
+
+function countWord(arr)
+{
+for(let i=0;i<arr.length;i++)
+{
+if(obj[arr[i]]) //check if character is present in the obj as key
+{
+    obj[arr[i]]=obj[arr[i]]+1; //if yes then update its value
+}
+else
+{
+    obj[arr[i]]=1; //initialise it with a value 1
+
+}
+}
+return obj;
+}
+console.log(countWord("pragati"));
+
+
+// second method //
+function countChars(text) {
+  return text
+    .split('')
+    .reduce((map, char) => {
+       map[char] = (map[char] || 0) + 1;
+       return map;
+  }, {});
+}
+console.log(countChars('Hello'));
+
+</script>
