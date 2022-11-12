@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="box">
+      <div>1</div>
+      <div>2</div>
+      <div>
+        <div id="hello">Hello world!</div>
+      </div>
+      <div>3</div>
+    </div>
+  </body>
+</html>
+<script>
+  const getElementById = (element, id) => {
+    const arr = [element];
+    while (arr.length) {
+      const curr = arr.shift();
+      if (curr.id === id) {
+        return curr;
+      }
+      if (curr.children.length) {
+        arr.push(...curr.children);
+      }
+    }
+  };
+
+  console.log(getElementById(document.documentElement, "hello"));
+</script>
