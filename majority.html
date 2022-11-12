@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+      <script>
+
+        let arr = [2,2,2,1,1,2,2]
+        let obj = {};
+        
+        for (let i=0; i<arr.length; i++){
+
+            // if (!obj.hasOwnProperty(arr[i])){
+            //     obj[arr[i]] = 1
+
+            // } else{
+           
+            //     obj[arr[i]] += 1;
+            // }
+
+            // instead of writing if and else we can simply use or operator //
+            obj[arr[i]]=obj[arr[i]]+1 || 1
+        }
+        for(let j in obj){
+            if(obj[j]>(arr.length)/2){
+                console.log('@ps', j)
+            }
+        }
+        console.log('@ps', obj);
+      </script>
