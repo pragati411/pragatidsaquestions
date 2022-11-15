@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // step1:  create a function
+  // step:2  pass a argument i inside a function
+  //  step:3simple write a condition if i.lenght is equal to 1 then return blank array
+  // step:4again write a condition if lenght of array is greater than 4 than delete the 1st element and add new one in the last//
+  // step: 5 return the new array //
+
+  let giveArray = function (i) {
+    if (i.length == 1) {
+      return [];
+    }
+    if (i.length > 4) {
+      return i.splice(i.length - 4, i.length);
+    }
+    if (i.length <= 4) {
+      return i.splice(1, i.length);
+    }
+  };
+  console.log(giveArray(["apple", "samasung", "lg", "mi", "apple"]));
+
+  let array = ["apple", "samasung", "lg", "mi", "apple", "samsung", "lg"];
+  let array_last_four = [];
+
+  array_last_four = array.slice(-4);
+  if (array.length < 4) {
+    array_last_four.shift();
+  }
+  console.log(array_last_four);
+</script>
