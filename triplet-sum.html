@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //Given an array of length n and a sum s
+  // Create three nested loop
+  // The counter of these loops represents the index of 3 elements of the triplets.
+  // Find the sum . If the sum is equal to given sum. Print the triplet and break.
+  // If there is no triplet, then print that no triplet exist.
+  let arr = [12, 3, 4, 1, 6, 9];
+  sum = 24;
+  let arr_size = arr.length;
+  function findTriplateNumbers(arr, arr_size, sum) {
+    for (let i = 0; i < arr_size - 2; i++) {
+      for (let j = i + 1; j < arr_size - 1; j++) {
+        for (let k = j + 1; k < arr_size; k++) {
+          if (arr[i] + arr[j] + arr[k] == sum) {
+            console.log(arr[i] + ", " + arr[j] + ", " + arr[k]);
+            return true;
+          }
+        }
+      }
+    }
+
+    return false;
+  }
+
+  //Traverse the array from start to end. (loop counter i)
+  // Create a HashMap or set to store unique pairs.
+  // Run another loop from i+1 to end of the array. (loop counter j)
+  // Find pair in subarray A[i+1..n-1]
+  // with sum equal to sum - A[i
+  // If there is an element in the set which is equal to x- arr[i] – arr[j], then print the triplet (arr[i], arr[j], x-arr[i]-arr[j]) and break
+  // Insert the jth element in the set
+  //   findTriplateNumbers(arr, arr_size, sum);
+
+  let A = [2, 4, 45, 6, 10, 8];
+
+  sum = 20;
+  let arr_size1 = A.length;
+
+  function find3Numbers(A, arr_size, sum) {
+    for (let i = 0; i < arr_size - 2; i++) {
+      let s = new Set();
+      let curr_sum = sum - A[i];
+      for (let j = i + 1; j < arr_size; j++) {
+        if (s.has(curr_sum - A[j])) {
+          console.log(A[i] + ", " + A[j] + ", " + (curr_sum - A[j]));
+
+          return true;
+        }
+        s.add(A[j]);
+      }
+    }
+
+    return false;
+  }
+
+  find3Numbers(A, arr_size, sum);
+</script>
