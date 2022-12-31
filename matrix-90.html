@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        Step1:There are array of array,so we need to pick single element
+              from every array from[(n-1)to zero index].
+        Step2:For picking up element we need to implement for loop that is going
+        to take array of array elements.
+        Step3:Then we need to form a new array of array that is rotation 
+        of given array   
+     -->
+  </body>
+</html>
+<script>
+  let matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+  ];
+
+  for (let i = 0; i < matrix.length; i++) {
+    matrix[i].reverse();
+  }
+  console.log(matrix[0][1]);
+  for (let j = 0; j < matrix.length; j++) {
+    console.log(matrix[j]);
+    for (let k = j; k < matrix.length; k++) {
+      console.log(matrix[k]);
+      console.log(j, k);
+      let temp = matrix[j][k]; // 0 0
+      //  0 1
+      //  0 2
+      //  1 0
+      //  1 1
+      // 1 2
+      //  2 0
+      //  2 1
+      //  2 2
+      matrix[j][k] = matrix[k][j];
+      console.log(matrix[j], matrix[k]);
+      matrix[k][j] = temp;
+    }
+  }
+
+  console.log(matrix);
+</script>
