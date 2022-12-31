@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+
+// var arr = [1,2,3,2,1];
+// var firstIndex = 0;
+
+// for(var i = 0; i < arr.length; i++){
+//   for( var j = i+1; j < arr.length; j++){
+
+//     if(arr[i] == arr[j]){
+//       firstIndex = arr[i];
+//       break;      
+//     }
+
+//   }
+// }
+// console.log(firstIndex);
+
+var numbers = [1,2,3,2,1];
+var firstIndex = {};
+
+for ( let i = 0; i <= numbers.length; i++) {
+  if (firstIndex.hasOwnProperty(numbers[i])){
+    console.log(numbers[i]);
+    break;
+
+  }else{
+    firstIndex[numbers[i]] = true;
+  }
+}
+console.log(firstIndex);
+  
+</script>
