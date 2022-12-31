@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const profile = {
+    fName: "pragati",
+    address: {
+      city: "satna",
+      country: "india",
+      sports: {
+        cricket: "virat",
+        football: "ronaldo",
+        actor: {
+          movie: "indianmovie",
+          actorName: "srk",
+        },
+      },
+    },
+  };
+  const findkey = (obj, path) => {
+    if (obj.hasOwnProperty(path)) {
+      return true;
+    }
+    for (let i in obj) {
+      if (typeof obj[i] === "object") {
+        const result = findkey(obj[i], path);
+        if (result) {
+          return true;
+        }
+      }
+    }
+    return false;
+  };
+  console.log(findkey(profile, "actorName"));
+</script>
