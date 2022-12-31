@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // step 1: create a function and pass a argument
+  // step 2: return anthoer function inside a function
+  // step 3: write a condion if second argument is not present then return the recursive function
+  // step 4: return the sum
+  // step 5: We will break the recursion when we see that there is no more argument to the function call. We will return the sum when we make the call with no more arguments i.e. on the last ()
+
+  function sum(a) {
+    return function (b) {
+      if (!b) {
+        return a;
+      }
+      return sum(a + b);
+    };
+  }
+  console.log(sum(1)(2)(3)(4)(5)(6)());
+</script>
