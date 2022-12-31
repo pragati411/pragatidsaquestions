@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // create a function
+  // pass a argumentn
+  // run a loop
+  // write a condtion if number is greater than 1000 add m, if num is greater than 500 add cm , if num is greater than 100 add cd and if = to 100 add c ,if number is greater than 50 add l if num is greater than 1o add x,if num is greater than 5 add v and if num is greater than 1 add i
+
+  const roman = (num) => {
+    let result = "";
+    while (num) {
+      if (num >= 1000) {
+        result += "M";
+        num -= 1000;
+      } else if (num >= 500) {
+        if (num >= 900) {
+          result += "CM";
+          num -= 900;
+        } else {
+          result += "D";
+          num -= 500;
+        }
+      } else if (num >= 100) {
+        if (num >= 400) {
+          result += "CD";
+          num -= 400;
+        } else {
+          result += "C";
+          num -= 100;
+        }
+      } else if (num >= 50) {
+        if (num >= 90) {
+          result += "XC";
+          num -= 90;
+        } else {
+          result += "L";
+          num -= 50;
+        }
+      } else if (num >= 10) {
+        if (num >= 40) {
+          result += "XL";
+          num -= 40;
+        } else {
+          result += "X";
+          num -= 10;
+        }
+      } else if (num >= 5) {
+        if (num >= 9) {
+          result += "IX";
+          num -= 9;
+        } else {
+          result += "V";
+          num -= 5;
+        }
+      } else {
+        if (num >= 4) {
+          result += "IV";
+          num -= 4;
+        } else {
+          result += "I";
+          num -= 1;
+        }
+      }
+    }
+    return result;
+  };
+  console.log(roman(1));
+  console.log(roman(5));
+  console.log(roman(55));
+  console.log(roman(100));
+
+  // with array //
+
+  function convertToRoman(num) {
+    let roman = "";
+    let decimal = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+    var romanNum = [
+      "M",
+      "CM",
+      "D",
+      "CD",
+      "C",
+      "XC",
+      "L",
+      "XL",
+      "X",
+      "IX",
+      "V",
+      "IV",
+      "I",
+    ];
+    for (var i = 0; i < decimal.length; i++) {
+      while (decimal[i] <= num) {
+        roman += romanNum[i];
+        num -= decimal[i];
+      }
+    }
+    return roman;
+  }
+  console.log(convertToRoman(5));
+  console.log(convertToRoman(1));
+  console.log(convertToRoman(5));
+  console.log(convertToRoman(55));
+  console.log(convertToRoman(100));
+</script>
