@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  // step 1: create a function
+  // run a two loop i and j
+  // write a condion
+  //
+  //   function arraySorting(arr) {
+  //     for (var i = 0; i < arr.length; i++) {
+  //       for (var j = i + 1; j < arr.length; j++) {
+  //         if (arr[i] > arr[j]) {
+  //           var swap = arr[i];
+  //           arr[i] = arr[j];
+  //           arr[j] = swap;
+  //         }
+  //       }
+  //     }
+  //     return arr;
+  //   }
+  //   console.log(arraySorting([1, 2, 1, 1, 1, 0, 0, 0, 1, 2]));
+  //   console.log(arraySorting([1, 0, 1]));
+  //   console.log(arraySorting([2, 0, 1, 2]));
+  //
+</script>
+
+<script>
+  // Keep three indices low = 1, mid = 1, and high = N and there are four ranges, 1 to low (the range containing 0), low to mid (the range containing 1), mid to high (the range containing unknown elements) and high to N (the range containing 2).
+  // Traverse the array from start to end and mid is less than high. (Loop counter is i)
+  // If the element is 0 then swap the element with the element at index low and update low = low + 1 and mid = mid + 1
+  // If the element is 1 then update mid = mid + 1
+  // If the element is 2 then swap the element with the element at index high and update high = high – 1 and update i = i – 1. As the swapped element is not processed
+  // Print the array.
+  // Sort the input array, the array is assumed to
+  // have values in {0, 1, 2}
+  function sort012(a, arr_size) {
+    let lo = 0;
+    let hi = arr_size - 1;
+    let mid = 0;
+    let temp = 0;
+    
+    while (mid <= hi) {
+      // If the element is 0
+      if (a[mid] == 0) {
+        temp = a[lo];
+        a[lo] = a[mid];
+        a[mid] = temp;
+        lo++;
+        mid++;
+      }
+      // If the element is 1
+      else if (a[mid] == 1) {
+        mid++;
+      }
+      // If the element is 2
+      else {
+        temp = a[mid];
+        a[mid] = a[hi];
+        a[hi] = temp;
+        hi--;
+      }
+    }
+  }
+
+
+  function printArray(arr, arr_size) {
+    let i;
+    for (i = 0; i < arr_size; i++) {
+      document.write(arr[i] + " ");
+    }
+    document.write("<br>");
+  }
+
+  
+  let arr = [0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1];
+
+  let arr_size = arr.length;
+  sort012(arr, arr_size);
+  printArray(arr, arr_size);
+
+  
+</script>
